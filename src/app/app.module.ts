@@ -5,11 +5,13 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { GameComponent } from './game/game.component';
 import { FormsModule } from '@angular/forms';
+import { GuessComponent } from './guess/guess.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    GameComponent
+    GameComponent,
+    GuessComponent
   ],
   imports: [
     BrowserModule,
