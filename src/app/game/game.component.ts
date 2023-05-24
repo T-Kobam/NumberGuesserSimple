@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
+import { CommonService } from '../service/common.service';
 
 @Component({
   selector: 'app-game',
@@ -7,14 +8,12 @@ import { Router } from '@angular/router';
   styleUrls: ['./game.component.css']
 })
 export class GameComponent {
-  correctNumber: number;
+  correctNumber: number | undefined;
   message: string;
-  errorMessage: string;
+  errorMessage: string | undefined;
 
-  constructor(private router: Router) {
-    this.correctNumber = 0;
+  constructor(private router: Router, private service: CommonService) {
     this.message = "プレイヤー1は1から100までの整数値を1つ入力してください";
-    this.errorMessage = "";
   }
 
   onKeyDown(event: any): void {
@@ -32,6 +31,7 @@ export class GameComponent {
     } 
 
     this.correctNumber = value;
+    this.service.setCurrentNumber(this.correctNumber);
     this.router.navigate(["/guess"]);
   }
 }

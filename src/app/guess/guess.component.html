@@ -1,1 +1,9 @@
-<p>guess works!</p>
+<p>{{message}}</p>
+<p>{{errorMessage}}</p>
+
+<input [style.display]="isShowInput" (keydown.enter)="onKeyDown($event)" type="text" placeholder="guessedNumber">
+<button [style.display]="isShowBtn" (click)="onClick()">もう一度</button>
+
+<p>guess : {{guessedNumber}}</p>
+<img [src]="imgSrc" alt="" width="300" height="300">
+<p>Off By : {{difference}}</p>

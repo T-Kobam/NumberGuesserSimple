@@ -6,6 +6,7 @@ import { AppComponent } from './app.component';
 import { GameComponent } from './game/game.component';
 import { FormsModule } from '@angular/forms';
 import { GuessComponent } from './guess/guess.component';
+import { CommonService } from './service/common.service';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,9 @@ import { GuessComponent } from './guess/guess.component';
     AppRoutingModule,
     FormsModule
   ],
-  providers: [],
+  providers: [
+    CommonService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
