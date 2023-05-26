@@ -1,0 +1,28 @@
+.message {
+    padding-top: 3em;
+}
+
+input {
+    margin: auto;
+    width: 15%;
+    font-size: large;
+}
+
+.btn--orange {
+  color: #fff;
+  background-color: #eb6100;
+}
+.btn--orange:hover {
+  color: #fff;
+  background: #f56500;
+}
+
+.btn--radius {
+   border-radius: 150vh;
+}
+
+button {
+    margin: auto;
+    width: 5%;
+    height: 5vh;
+}

@@ -1,8 +1,8 @@
 <p>{{message}}</p>
 <p>{{errorMessage}}</p>
 
-<input [style.display]="isShowInput" (keydown.enter)="onKeyDown($event)" type="text" placeholder="guessedNumber">
-<button [style.display]="isShowBtn" (click)="onClick()">もう一度</button>
+<input [style.display]="showInputFlg" (keydown.enter)="onKeyDown($event)" type="text" placeholder="guessedNumber">
+<button [style.display]="showBtnFlg" (click)="onClick()" class="btn--orange btn--radius">もう一度</button>
 
 <p>guess : {{guessedNumber}}</p>
 <img [src]="imgSrc" alt="" width="300" height="300">

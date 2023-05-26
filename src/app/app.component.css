@@ -1,0 +1,12 @@
+div {
+    text-align: center;
+}
+
+.main {
+    padding-top: 3em;
+}
+
+.main input {
+    width: 15%;
+    font-size: large;
+}
