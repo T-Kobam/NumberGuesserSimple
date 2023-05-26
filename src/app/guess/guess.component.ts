@@ -25,7 +25,7 @@ export class GuessComponent {
   // inputタグ表示フラグ
   showInputFlg: string;
   // 画像ファイルディレクトリ
-  IMG_DIRECTORY: string = "../../assets/";
+  IMG_DIRECTORY: string = "assets/";
   // ファイル拡張子 : JPG
   JPG: string = ".jpg";
   // 差の値による画像URL
