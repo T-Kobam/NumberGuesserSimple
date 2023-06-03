@@ -5,10 +5,10 @@ import { Injectable } from '@angular/core';
 })
 export class AppConstService {
   /** 画像ファイルディレクトリ */
-  private static readonly IMG_DIRECTORY: string = "../../assets/";
+  private static readonly IMG_DIRECTORY: string = "assets/";
   /** ファイル拡張子: JPG */
   private static readonly JPG: string = ".jpg";
-  
+
   /** 01_thinking.jpg */
   public static readonly THINKING_01: string = AppConstService.IMG_DIRECTORY + "01_thinking" + AppConstService.JPG;
   /** 02_happy.jpg */

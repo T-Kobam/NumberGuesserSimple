@@ -5,6 +5,7 @@ div {
 ul {
     width: fit-content;
     margin: auto;
+    text-align: left;
 }
 
 .main {

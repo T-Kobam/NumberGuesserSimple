@@ -1,0 +1,22 @@
+<div class="message">
+    <h3>Number Guessing Game (AI mode)</h3>
+    <div class="btn-div">
+        <p>{{message}}</p>
+        <button *ngIf="showButtonFlag" (click)="onClick()" class="btn--orange btn--radius">もう一度</button>
+        <button *ngIf="guessedCount === 0 " (click)="onClickStart()" class="btn--orange btn--radius">始める</button>
+    </div>
+    <p class="error-message">{{errorMessage}}</p>
+</div>
+
+<div class="input">
+    <input *ngIf="isPlayer && !showButtonFlag" (keydown.enter)="onKeyDownGuessedNumber($event)" type="text" placeholder="guessedNumber">
+</div>
+
+<div class="main">
+    <div class="sub" *ngFor="let guess of guessServices" [ngSwitch]="(guessedCount === 0 || guess.getIndex() >= guessedCount) && !showButtonFlag">
+        <p *ngSwitchCase="true">guess : ?</p>
+        <p *ngSwitchCase="false">guess : {{guess.getGuessNumber()}}</p>
+        <img [src]="guess.getImageUrl()" alt="" width="250" height="250">    
+        <p>Off By : {{guess.getDistanceRange()}}</p>
+    </div>
+</div>

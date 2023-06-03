@@ -8,7 +8,8 @@ import { FormsModule } from '@angular/forms';
 import { GuessComponent } from './guess/guess.component';
 import { CommonService } from './service/common.service';
 import { GameExtraComponent } from './game-extra/game-extra.component';
-import { GuessExtraComponent } from './guess-extra/guess-extra.component';
+import { GuessExtraService } from './guess-extra/guess-extra.service';
+import { GameExtraAiComponent } from './game-extra-ai/game-extra-ai.component';
 
 @NgModule({
   declarations: [
@@ -16,7 +17,7 @@ import { GuessExtraComponent } from './guess-extra/guess-extra.component';
     GameComponent,
     GuessComponent,
     GameExtraComponent,
-    GuessExtraComponent
+    GameExtraAiComponent
   ],
   imports: [
     BrowserModule,
@@ -24,7 +25,8 @@ import { GuessExtraComponent } from './guess-extra/guess-extra.component';
     FormsModule
   ],
   providers: [
-    CommonService
+    CommonService,
+    GuessExtraService
   ],
   bootstrap: [AppComponent]
 })
