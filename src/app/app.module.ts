@@ -7,12 +7,16 @@ import { GameComponent } from './game/game.component';
 import { FormsModule } from '@angular/forms';
 import { GuessComponent } from './guess/guess.component';
 import { CommonService } from './service/common.service';
+import { GameExtraComponent } from './game-extra/game-extra.component';
+import { GuessExtraComponent } from './guess-extra/guess-extra.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     GameComponent,
-    GuessComponent
+    GuessComponent,
+    GameExtraComponent,
+    GuessExtraComponent
   ],
   imports: [
     BrowserModule,

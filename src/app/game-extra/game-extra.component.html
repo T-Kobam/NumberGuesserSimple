@@ -1,0 +1,21 @@
+<div class="message">
+    <div class="btn-div">
+        <p>{{message}}</p>
+        <button *ngIf="showButtonFlag" (click)="onClick()" class="btn--orange btn--radius">もう一度</button>
+    </div>
+    <p class="error-message">{{errorMessage}}</p>
+</div>
+
+<div class="input">
+    <input *ngIf="isPlayerOne" (keydown.enter)="onKeyDownCorrectNumber($event)" type="text" placeholder="correctNumber">
+    <input *ngIf="!isPlayerOne && !showButtonFlag" (keydown.enter)="onKeyDownGuessedNumber($event)" type="text" placeholder="guessedNumber">
+</div>
+
+<div class="main">
+    <div class="sub" *ngFor="let guess of guessServices" [ngSwitch]="(guessedCount === 0 || guess.getIndex() >= guessedCount) && !showButtonFlag">
+        <p *ngSwitchCase="true">guess : ?</p>
+        <p *ngSwitchCase="false">guess : {{guess.getGuessNumber()}}</p>
+        <img [src]="guess.getImageUrl()" alt="" width="250" height="250">    
+        <p>Off By : {{guess.getDistanceRange()}}</p>
+    </div>
+</div>

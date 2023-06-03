@@ -1,0 +1,42 @@
+input {
+    width: 15%;
+    font-size: large;
+}
+
+button {
+    font-size: large;
+    margin-left: 2em;
+    padding: 0.8em;
+}
+
+.btn-div {
+    display: flex;
+    justify-content: center;
+}
+
+.error-message {
+    color: red;
+}
+
+.btn--orange {
+    color: #fff;
+    background-color: #eb6100;
+}
+
+.btn--orange:hover {
+    color: #fff;
+    background: #f56500;
+}
+  
+.btn--radius {
+    border-radius: 150vh;
+}
+  
+.main {
+    display: flex;
+    justify-content: center;
+}
+
+.sub {
+    padding-right: 5em;
+}

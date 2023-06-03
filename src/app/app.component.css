@@ -2,6 +2,11 @@ div {
     text-align: center;
 }
 
+ul {
+    width: fit-content;
+    margin: auto;
+}
+
 .main {
     padding-top: 3em;
 }
