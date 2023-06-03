@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 import { CommonService } from '../service/common.service';
-import { GuessExtraComponent } from '../guess-extra/guess-extra.component';
+import { GuessExtraService } from '../guess-extra/guess-extra.service';
 
 @Component({
   selector: 'app-game-extra',
@@ -20,7 +20,7 @@ export class GameExtraComponent {
   /** もう一度ボタン表示フラグ */
   showButtonFlag: boolean;
   /** Guessサービス */
-  guessServices: GuessExtraComponent[];
+  guessServices: GuessExtraService[];
   /** 推測回数の上限 */
   private static readonly GUESS_LIMIT: number = 5;
 
@@ -28,7 +28,7 @@ export class GameExtraComponent {
     // サービスの初期化
     this.guessServices = [];
     for (let i = 0; i < GameExtraComponent.GUESS_LIMIT; i++) {
-      this.guessServices.push(new GuessExtraComponent());
+      this.guessServices.push(new GuessExtraService());
     }
 
     this.message = "プレイヤー1: 1から100までの整数値を1つ入力してね！";
@@ -40,12 +40,12 @@ export class GameExtraComponent {
 
   private initialize(): void {
     // サービスの静的メンバ変数の初期化
-    GuessExtraComponent.initialize();
+    GuessExtraService.initialize();
 
     // サービスの初期化
     this.guessServices = [];
     for (let i = 0; i < GameExtraComponent.GUESS_LIMIT; i++) {
-      this.guessServices.push(new GuessExtraComponent());
+      this.guessServices.push(new GuessExtraService());
     }
 
     this.message = "プレイヤー1: 1から100までの整数値を1つ入力してね！";
@@ -69,7 +69,7 @@ export class GameExtraComponent {
     for (let i = 0; i < this.guessedCount - 1; i++) {
       guessedNumbers.push(Number(this.guessServices[i].getGuessNumber()));
     }
-    return GuessExtraComponent.calcSumOfDeviation(guessedNumbers);
+    return GuessExtraService.calcSumOfDeviation(guessedNumbers);
   }
 
   /**

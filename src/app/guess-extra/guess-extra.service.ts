@@ -1,12 +1,10 @@
-import { Component } from '@angular/core';
 import { AppConstService } from '../constants/app-const.service';
+import { Injectable } from '@angular/core';
 
-@Component({
-  selector: 'app-guess-extra',
-  templateUrl: './guess-extra.component.html',
-  styleUrls: ['./guess-extra.component.css']
+@Injectable({
+  providedIn: 'root'
 })
-export class GuessExtraComponent {
+export class GuessExtraService {
   private correctNumber: number; // プレイヤー1が入力した値
   private guessNumber: number; // 推測値
   private distanceRange: string; // 推測値と正しい数値の間の距離が該当する範囲
@@ -19,15 +17,15 @@ export class GuessExtraComponent {
     this.guessNumber = -1;    
     this.distanceRange = "-1";
     this.imageUrl = AppConstService.THINKING_09;
-    this.index = GuessExtraComponent.totalIndex;
-    GuessExtraComponent.totalIndex++;
+    this.index = GuessExtraService.totalIndex;
+    GuessExtraService.totalIndex++;
   }
 
  /**
    * 全要素番号をリセットする 
   */
   static initialize(): void {
-    GuessExtraComponent.totalIndex = 1;
+    GuessExtraService.totalIndex = 1;
   }
 
   getCorrectNumber(): number {

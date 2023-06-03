@@ -1,16 +1,16 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { GuessExtraComponent } from './guess-extra.component';
+import { GuessExtraService } from './guess-extra.service';
 
 describe('GuessExtraComponent', () => {
-  let component: GuessExtraComponent;
-  let fixture: ComponentFixture<GuessExtraComponent>;
+  let component: GuessExtraService;
+  let fixture: ComponentFixture<GuessExtraService>;
 
   beforeEach(() => {
     TestBed.configureTestingModule({
-      declarations: [GuessExtraComponent]
+      declarations: [GuessExtraService]
     });
-    fixture = TestBed.createComponent(GuessExtraComponent);
+    fixture = TestBed.createComponent(GuessExtraService);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
