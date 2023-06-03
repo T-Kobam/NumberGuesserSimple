@@ -7,6 +7,7 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 1. 1人のプレイヤーが数値を入力し、もう1人のプレイヤーが推測するモードです。(Simple)
 2. 1人のプレイヤーが数値を入力し、もう1人のプレイヤーが5回以内に推測するモードです。(Extra)
 3. コンピュータが決めた数値を1人のプレイヤーが推測するモードです。(AI mode)
+
 URL: https://t-kobam.github.io/NumberGuesserSimple/
 
 ## Development server
