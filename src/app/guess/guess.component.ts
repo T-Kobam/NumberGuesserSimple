@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { CommonService } from '../service/common.service';
 import { Router } from '@angular/router';
+import { AppConstService } from '../constants/app-const.service';
 
 @Component({
   selector: 'app-guess',
@@ -8,36 +9,32 @@ import { Router } from '@angular/router';
   styleUrls: ['./guess.component.css']
 })
 export class GuessComponent {
-  // 推測値
+  /** 推測値 */
   guessedNumber: number | string;
-  // メッセージ
+  /** メッセージ */
   message: string;
-  // エラーメッセージ
+  /** エラーメッセージ */
   errorMessage: string | undefined;
-  // 差の値
+  /** 差の値 */
   difference: string;
-  // 画像URL
+  /** 画像URL */
   imgSrc: string | undefined;
-  // 推測回数
+  /** 推測回数 */
   count: number;
-  // ボタン表示フラグ
+  /** ボタン表示フラグ */
   showBtnFlg: string;
-  // inputタグ表示フラグ
+  /** inputタグ表示フラグ */
   showInputFlg: string;
-  // 画像ファイルディレクトリ
-  IMG_DIRECTORY: string = "assets/";
-  // ファイル拡張子 : JPG
-  JPG: string = ".jpg";
-  // 差の値による画像URL
+  /** 差の値による画像URL */
   DIFFERENCE_IMG_SRC: Map<string, string> = new Map([
-    ["thinking", this.IMG_DIRECTORY + "01_thinking" + this.JPG],
-    ["happy", this.IMG_DIRECTORY + "02_happy" + this.JPG],
-    ["bad", this.IMG_DIRECTORY + "03_bad" + this.JPG],
-    ["sad", this.IMG_DIRECTORY + "04_sad" + this.JPG],
-    ["confuse", this.IMG_DIRECTORY + "05_confuse" + this.JPG],
-    ["angry", this.IMG_DIRECTORY + "06_angry" + this.JPG],
-    ["rage", this.IMG_DIRECTORY + "07_rage" + this.JPG],
-    ["omg", this.IMG_DIRECTORY + "08_omg" + this.JPG],
+    ["thinking", AppConstService.THINKING_01],
+    ["happy", AppConstService.HAPPY_02],
+    ["bad", AppConstService.BAD_03],
+    ["sad", AppConstService.SAD_04],
+    ["confuse", AppConstService.CONFUSE_05],
+    ["angry", AppConstService.ANGRY_06],
+    ["rage", AppConstService.RAGE_07],
+    ["omg", AppConstService.OMG_08]
   ]);
 
   constructor(private router: Router, private service: CommonService) {
@@ -98,10 +95,14 @@ export class GuessComponent {
         this.imgSrc = this.DIFFERENCE_IMG_SRC.get("omg");
         this.difference = "50+";
       }
+      event.target.value = "";
       this.count++;
     }
   }
 
+  /**
+   * ゲームを初期化する(もう一度ボタンがクリック)
+   */
   onClick(): void {
     this.router.navigate(["/game-simple"]);
   }
