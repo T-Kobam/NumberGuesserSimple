@@ -32,6 +32,6 @@ export class GameComponent {
 
     this.correctNumber = value;
     this.service.setCurrentNumber(this.correctNumber);
-    this.router.navigate(["/guess"]);
+    this.router.navigate(["/guess-simple"]);
   }
 }

@@ -30,14 +30,14 @@ export class GuessComponent {
   JPG: string = ".jpg";
   // 差の値による画像URL
   DIFFERENCE_IMG_SRC: Map<string, string> = new Map([
-    ["thinking", this.IMG_DIRECTORY + "thinking" + this.JPG],
-    ["happy", this.IMG_DIRECTORY + "happy" + this.JPG],
-    ["bad", this.IMG_DIRECTORY + "bad" + this.JPG],
-    ["sad", this.IMG_DIRECTORY + "sad" + this.JPG],
-    ["confuse", this.IMG_DIRECTORY + "confuse" + this.JPG],
-    ["angry", this.IMG_DIRECTORY + "angry" + this.JPG],
-    ["rage", this.IMG_DIRECTORY + "rage" + this.JPG],
-    ["omg", this.IMG_DIRECTORY + "omg" + this.JPG],
+    ["thinking", this.IMG_DIRECTORY + "01_thinking" + this.JPG],
+    ["happy", this.IMG_DIRECTORY + "02_happy" + this.JPG],
+    ["bad", this.IMG_DIRECTORY + "03_bad" + this.JPG],
+    ["sad", this.IMG_DIRECTORY + "04_sad" + this.JPG],
+    ["confuse", this.IMG_DIRECTORY + "05_confuse" + this.JPG],
+    ["angry", this.IMG_DIRECTORY + "06_angry" + this.JPG],
+    ["rage", this.IMG_DIRECTORY + "07_rage" + this.JPG],
+    ["omg", this.IMG_DIRECTORY + "08_omg" + this.JPG],
   ]);
 
   constructor(private router: Router, private service: CommonService) {
@@ -103,6 +103,6 @@ export class GuessComponent {
   }
 
   onClick(): void {
-    this.router.navigate([""]);
+    this.router.navigate(["/game-simple"]);
   }
 }
