@@ -2,6 +2,14 @@
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 16.0.1.
 
+1-100の間の数値推測ゲームです。
+ゲームモードは全部で3つあります。
+1. 1人のプレイヤーが数値を入力し、もう1人のプレイヤーが推測するモードです。(Simple)
+2. 1人のプレイヤーが数値を入力し、もう1人のプレイヤーが5回以内に推測するモードです。(Extra)
+3. コンピュータが決めた数値を1人のプレイヤーが推測するモードです。(AI mode)
+
+URL: https://t-kobam.github.io/NumberGuesserSimple/
+
 ## Development server
 
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
