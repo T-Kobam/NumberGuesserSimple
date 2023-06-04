@@ -1,7 +1,6 @@
 import { Component } from '@angular/core';
 import { GuessExtraService } from '../guess-extra/guess-extra.service';
 import { Router } from '@angular/router';
-import { GameExtraComponent } from '../game-extra/game-extra.component';
 
 @Component({
   selector: 'app-game-extra-ai',
@@ -25,6 +24,9 @@ export class GameExtraAiComponent {
   private static readonly GUESS_LIMIT: number = 5;
 
   constructor(private router: Router) {
+    // サービスの静的メンバ変数の初期化
+    GuessExtraService.initialize();
+
     // サービスの初期化
     this.guessServices = [];
     for (let i = 0; i < GameExtraAiComponent.GUESS_LIMIT; i++) {
@@ -138,7 +140,7 @@ export class GameExtraAiComponent {
     this.message = "プレイヤー: 1から100の間の整数値を入力してね！";
     this.errorMessage = "";
     // 推測回数を+1する
-    this.guessedCount += 1;
+    this.guessedCount++;
   }
 
   /**

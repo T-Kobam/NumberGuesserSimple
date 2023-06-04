@@ -25,6 +25,9 @@ export class GameExtraComponent {
   private static readonly GUESS_LIMIT: number = 5;
 
   constructor(private router: Router) {
+    // サービスの静的メンバ変数の初期化
+    GuessExtraService.initialize();
+
     // サービスの初期化
     this.guessServices = [];
     for (let i = 0; i < GameExtraComponent.GUESS_LIMIT; i++) {
